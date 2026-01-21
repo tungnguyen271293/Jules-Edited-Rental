@@ -14,7 +14,6 @@ import base64
 import google.generativeai as genai
 from PIL import Image
 from openai import OpenAI
-from pyngrok import ngrok
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
@@ -40,8 +39,7 @@ load_dotenv()
 # Try secrets (local/Streamlit Cloud) -> then Env Var (Hugging Face) -> then Default
 DEFAULT_API_KEY = st.secrets.get("default", {}).get("api_key", os.getenv("AI_API_KEY", ""))
 
-# 2. Ngrok Config
-NGROK_AUTH_DEFAULT = os.getenv("NGROK_AUTH_TOKEN", "")
+# 2. API Key Config
 
 # 3. Listings Config
 LISTINGS = st.secrets.get("listings", {})
