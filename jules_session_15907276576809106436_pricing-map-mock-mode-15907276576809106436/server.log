@@ -1,0 +1,62 @@
+
+> enspired-nomad-rentals@0.0.0 dev
+> vite
+
+
+  VITE v6.4.1  ready in 340 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://192.168.0.2:3000/
+Error:   Failed to scan for dependencies from entries:
+  /app/index.html
+
+  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mFailed to resolve entry for package "react-drive-picker". The package may have incorrect main/module/exports specified in its package.json.[0m [1m[35m[plugin vite:dep-scan][0m
+
+    node_modules/esbuild/lib/main.js:1217:21:
+[37m      1217 │         let result = [32m[37mawait callback({
+           ╵                      [32m^[0m
+
+    at packageEntryFailure (file:///app/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:16198:15)
+    at resolvePackageEntry (file:///app/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:16195:3)
+    at tryNodeResolve (file:///app/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:16060:18)
+    at ResolveIdContext.resolveId (file:///app/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:15831:19)
+    at EnvironmentPluginContainer.resolveId (file:///app/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:42242:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async resolve (file:///app/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:14325:22)
+    at async file:///app/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:14490:28
+    at async requestCallbacks.on-resolve (/app/node_modules/esbuild/lib/main.js:1217:22)
+    at async handleRequest (/app/node_modules/esbuild/lib/main.js:628:11)
+
+  This error came from the "onResolve" callback registered here:
+
+    node_modules/esbuild/lib/main.js:1141:20:
+[37m      1141 │       let promise = [32m[37msetup({
+           ╵                     [32m^[0m
+
+    at setup (file:///app/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:14478:13)
+    at handlePlugins (/app/node_modules/esbuild/lib/main.js:1141:21)
+    at buildOrContextImpl (/app/node_modules/esbuild/lib/main.js:854:5)
+    at Object.buildOrContext (/app/node_modules/esbuild/lib/main.js:680:5)
+    at /app/node_modules/esbuild/lib/main.js:2035:68
+    at new Promise (<anonymous>)
+    at Object.context (/app/node_modules/esbuild/lib/main.js:2035:27)
+    at Object.context (/app/node_modules/esbuild/lib/main.js:1877:58)
+    at prepareEsbuildScanner (file:///app/node_modules/vite/dist/node/chunks/dep-D4NMHUTW.js:14266:24)
+
+  The plugin "vite:dep-scan" was triggered by this import
+
+    components/admin/PropertyForm.tsx:2:31:
+[37m      2 │ import { useDrivePicker } from [32m'react-drive-picker'[37m;
+        ╵                                [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+
+    at failureErrorWithLog (/app/node_modules/esbuild/lib/main.js:1467:15)
+    at /app/node_modules/esbuild/lib/main.js:926:25
+    at runOnEndCallbacks (/app/node_modules/esbuild/lib/main.js:1307:45)
+    at buildResponseToResult (/app/node_modules/esbuild/lib/main.js:924:7)
+    at /app/node_modules/esbuild/lib/main.js:936:9
+    at new Promise (<anonymous>)
+    at requestCallbacks.on-end (/app/node_modules/esbuild/lib/main.js:935:54)
+    at handleRequest (/app/node_modules/esbuild/lib/main.js:628:17)
+    at handleIncomingPacket (/app/node_modules/esbuild/lib/main.js:653:7)
+    at Socket.readFromStdout (/app/node_modules/esbuild/lib/main.js:581:7)
